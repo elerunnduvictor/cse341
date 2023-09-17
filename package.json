@@ -1,0 +1,30 @@
+  {
+      "name": "cse341",
+      "version": "1.0.0",
+      "description": "",
+      "main": "server.js",
+      "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "author": "",
+          "license": "ISC",
+          "devStart": "nodemon server.js",
+          "start": "node server.js"
+      },
+
+      "repository": {
+          "type": "git",
+          "url": "git+https://github.com/KhalidByui/cse341.git"
+      },
+      "author": "Elerunndu Victor Oluwapelumi",
+      "license": "ISC",
+      "bugs": {
+          "url": "https://github.com/KhalidByui/cse341/"
+      },
+      "homepage": "https://github.com/KhalidByui/cse341.git",
+      "dependencies": {
+          "express": "^4.17.3"
+      },
+      "devDependencies": {
+          "nodemon": "^2.0.22"
+      }
+  }
