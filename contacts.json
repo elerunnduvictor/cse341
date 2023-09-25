@@ -1,0 +1,26 @@
+{
+    "_id": {
+        "$oid": "650e6a7157f8b51026712555"
+    },
+    "contact": {
+        "firstName": "Mary",
+        "lastName": "Andrew",
+        "email": "marikpo49@gmail.com",
+        "favoriteColor": "Black",
+        "birthday": "02/19/98"
+    },
+    "contact2": {
+        "firstName": "Spencer",
+        "lastName": "Bolarinwa",
+        "email": "holwaspencer06@gmail.com",
+        "favoriteColor": "Blue",
+        "birthday": "10/07/97"
+    },
+    "contact3": {
+        "firstName": "Veronica",
+        "lastName": "Edorh",
+        "email": "veronicaedorh@gmail.com",
+        "favoriteColor": "Red",
+        "birthday": "06/20/95"
+    }
+}
