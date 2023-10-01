@@ -24,3 +24,23 @@ content-type: application/json
 ### DELETE contact 
 DELETE http://localhost:8080/6518a92688c2e685843fb8d3 HTTP/1.1
 
+
+// render Deploy for create, update and delete contacts 
+### Create contact 
+POST https://week-3-personal-bpt2.onrender.com HTTP/1.1
+content-type: application/json
+
+{
+"firstName":"Adam", "lastName":"Adebesin", "email":"adamadebesin@gmail.com", "favoriteColor":"Brown", "birthday":"08/12/97"
+}
+
+### PUT contact 
+PUT https://week-3-personal-bpt2.onrender.com/6518c4de3296cafcaae042ab HTTP/1.1
+content-type: application/json
+
+{
+"firstName":"Victor", "lastName":"Elerunndu", "email":"velerunndu@gmail.com", "favoriteColor":"Blue", "birthday":"10/20/98"
+} 
+
+### DELETE contact 
+DELETE https://week-3-personal-bpt2.onrender.com/6518c4de3296cafcaae042ab HTTP/1.1
