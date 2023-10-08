@@ -1,46 +1,44 @@
-# week 3 personal assignment
+# week 4 personal assignment 
+GET http://localhost:8080/ HTTP/1.1
 
-// LOCALHOST ### Get all contacts 
-GET http://localhost:8080/
+### 
+GET http://localhost:8080/api-docs
 
-### Get contact by id 
-GET http://localhost:8080/6518a8e388c2e685843fb8d1/ HTTP/1.1
-
-### Create contact 
-POST http://localhost:8080/ HTTP/1.1
+### Create contact on local host 
+POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-"firstName":"Adam", "lastName":"Adebesin", "email":"adamadebesin@gmail.com", "favoriteColor":"Brown", "birthday":"08/12/97"
+"firstName":"Peaceman", "lastName":"Igbojionu", "email":"peace@gmail.com", "favoriteColor":"Brown", "birthday":"31/01/1995"
 }
 
-### PUT contact 
-PUT http://localhost:8080/6518a90588c2e685843fb8d2 HTTP/1.1
+### PUT contact on local host based on user_id 
+PUT http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-"firstName":"Victor", "lastName":"Elerunndu", "email":"velerunndu@gmail.com", "favoriteColor":"Blue", "birthday":"10/20/98"
+"firstName":"Peace", "lastName":"Egharevba", "email":"peace@gmail.com", "favoriteColor":"Blue", "birthday":"31/01/1991"
 } 
 ### DELETE contact 
-DELETE http://localhost:8080/6518a92688c2e685843fb8d3 HTTP/1.1
-
+DELETE http://localhost:8080/contacts HTTP/1.1
 
 // render Deploy for create, update and delete contacts 
 ### Create contact 
-POST https://week-3-personal-bpt2.onrender.com HTTP/1.1
+POST https://project-week-4-api-documentation.onrender.com/contacts HTTP/1.1 
 content-type: application/json
 
 {
-"firstName":"Adam", "lastName":"Adebesin", "email":"adamadebesin@gmail.com", "favoriteColor":"Brown", "birthday":"08/12/97"
+"firstName":"Kelvin", "lastName":"abada", "email":"promsei@gmail.com", "favoriteColor":"Brown-red", "birthday":"21/11/1997"
 }
 
 ### PUT contact 
-PUT https://week-3-personal-bpt2.onrender.com/6518c4de3296cafcaae042ab HTTP/1.1
+PUT https://project-week-4-api-documentation.onrender.com/contacts HTTP/1.1
 content-type: application/json
 
 {
-"firstName":"Victor", "lastName":"Elerunndu", "email":"velerunndu@gmail.com", "favoriteColor":"Blue", "birthday":"10/20/98"
-} 
+"firstName":"Kelvin",
+"lastName":"abada", "email":"promsei@gmail.com", "favoriteColor":"Brown-red", "birthday":"21/11/1997"
+}
 
 ### DELETE contact 
-DELETE https://week-3-personal-bpt2.onrender.com/6518c4de3296cafcaae042ab HTTP/1.1
+DELETE https://project-week-4-api-documentation.onrender.com/contacts HTTP/1.1
