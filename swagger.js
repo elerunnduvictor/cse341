@@ -5,7 +5,7 @@ const doc = {
         title: 'My Contacts API',
         description: 'This API contains information about people in my contact list.',
     },
-    host: 'project-week-4-api-documentation.onrender.com',
+    host: 'project-week-4-api-documentation-uh0m.onrender.com',
     schemes: ['https'],
 };
 

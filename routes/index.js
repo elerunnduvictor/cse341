@@ -8,7 +8,7 @@ routes.use('/contacts', contacts);
 routes.use('/',
     (docData = (req, res) => {
         let docData = {
-            RenderURL: 'https://project-week-4-api-documentation.onrender.com/',
+            RenderURL: 'https://project-week-4-api-documentation-uh0m.onrender.com',
         };
         res.send(docData);
     }));

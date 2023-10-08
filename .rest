@@ -24,7 +24,7 @@ DELETE http://localhost:8080/contacts HTTP/1.1
 
 // render Deploy for create, update and delete contacts 
 ### Create contact 
-POST https://project-week-4-api-documentation.onrender.com/contacts HTTP/1.1 
+POST https://project-week-4-api-documentation-uh0m.onrender.com HTTP/1.1
 content-type: application/json
 
 {
@@ -32,7 +32,7 @@ content-type: application/json
 }
 
 ### PUT contact 
-PUT https://project-week-4-api-documentation.onrender.com/contacts HTTP/1.1
+PUT https://project-week-4-api-documentation-uh0m.onrender.com HTTP/1.1
 content-type: application/json
 
 {
@@ -41,4 +41,4 @@ content-type: application/json
 }
 
 ### DELETE contact 
-DELETE https://project-week-4-api-documentation.onrender.com/contacts HTTP/1.1
+DELETE https://project-week-4-api-documentation-uh0m.onrender.com HTTP/1.1
