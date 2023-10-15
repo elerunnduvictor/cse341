@@ -1,3 +1,4 @@
+
 GET http://localhost:8080/users/
 
 ###
@@ -25,7 +26,7 @@ content-type: application/json
 "condition": "Good working condition", 
 "description": "This product has barely been used for two years. It is a 100 liter deep freezer.", 
 "location": "idaho", 
-"userId": "64696027d13a09ffebbd3c84"
+"userId": "652b6a82b4c57617441127b2"
 }
 
 ###
@@ -53,6 +54,6 @@ content-type: application/json
 "condition": "Good working condition", 
 "description": "This product has barely been used for two years. It is a 100 liter deep freezer.", 
 "location": "idaho", 
-"userId": "64696027d13a09ffebbd3c84"
+"userId": "652b6b1f66d09f0c0733a53e"
 }
 
