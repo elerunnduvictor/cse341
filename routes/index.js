@@ -14,7 +14,7 @@ router.use(
     '/',
     (docData = (req, res) => {
         let docData = {
-            RenderURL: 'https://.onrender.com',
+            RenderURL: '_',
         };
         res.send(docData);
     })
