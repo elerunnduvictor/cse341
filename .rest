@@ -1,7 +1,6 @@
 GET http://localhost:8080/users/
 
 ###
-
 POST http://localhost:8080/users HTTP/1.1 
 content-type: application/json
 
@@ -14,7 +13,6 @@ content-type: application/json
 }
 
 ###
-
 POST http://localhost:8080/Products HTTP/1.1 
 content-type: application/json
 
@@ -29,3 +27,32 @@ content-type: application/json
 "location": "idaho", 
 "userId": "64696027d13a09ffebbd3c84"
 }
+
+###
+POST https://week-5-personal-project.onrender.com/users 
+content-type: application/json
+
+{
+"firstName": "Elerunndu", 
+"lastName": "Victor", 
+"userName": "Khalid", 
+"email": "khalid@gmail.com", 
+"password": "khalid202023"
+}
+
+###
+POST https://week-5-personal-project.onrender.com/Products 
+content-type: application/json
+
+{
+"productName": "Deep Freezer",
+"brand": "LG", 
+"color": "grey", 
+"initialPrice": "$150", 
+"declutterPrice": "$50", 
+"condition": "Good working condition", 
+"description": "This product has barely been used for two years. It is a 100 liter deep freezer.", 
+"location": "idaho", 
+"userId": "64696027d13a09ffebbd3c84"
+}
+
