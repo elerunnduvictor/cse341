@@ -2,15 +2,15 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'My Contacts API',
-        description: 'This API contains information about people in my contact list.',
+        title: 'My MarketPlace Project API',
+        description: 'This API contains information about people who sell all kind of products,and the general information of the products they sell.',
     },
-    host: 'project-week-4-api-documentation-uh0m.onrender.com',
+    host: 'https://onrender.com',
     schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
-const endpointsFiles = ['./routes/index.js'];
+const endpointsFiles = ['./Routes/index.js'];
 
 // generate swagger.json
 swaggerAutogen(outputFile, endpointsFiles, doc);

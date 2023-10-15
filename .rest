@@ -1,44 +1,31 @@
-# week 4 personal assignment 
-GET http://localhost:8080/ HTTP/1.1
+GET http://localhost:8080/users/
 
-### 
-GET http://localhost:8080/api-docs
+###
 
-### Create contact on local host 
-POST http://localhost:8080/contacts HTTP/1.1
+POST http://localhost:8080/users HTTP/1.1 
 content-type: application/json
 
 {
-"firstName":"Peaceman", "lastName":"Igbojionu", "email":"peace@gmail.com", "favoriteColor":"Brown", "birthday":"31/01/1995"
+"firstName": "Elerunndu", 
+"lastName": "Victor", 
+"userName": "Khalid", 
+"email": "khalid@gmail.com", 
+"password": "khalid202023"
 }
 
-### PUT contact on local host based on user_id 
-PUT http://localhost:8080/contacts HTTP/1.1
+###
+
+POST http://localhost:8080/Products HTTP/1.1 
 content-type: application/json
 
 {
-"firstName":"Peace", "lastName":"Egharevba", "email":"peace@gmail.com", "favoriteColor":"Blue", "birthday":"31/01/1991"
-} 
-### DELETE contact 
-DELETE http://localhost:8080/contacts HTTP/1.1
-
-// render Deploy for create, update and delete contacts 
-### Create contact 
-POST https://project-week-4-api-documentation-uh0m.onrender.com HTTP/1.1
-content-type: application/json
-
-{
-"firstName":"Kelvin", "lastName":"abada", "email":"promsei@gmail.com", "favoriteColor":"Brown-red", "birthday":"21/11/1997"
+"productName": "Deep Freezer",
+"brand": "LG", 
+"color": "grey", 
+"initialPrice": "$150", 
+"declutterPrice": "$50", 
+"condition": "Good working condition", 
+"description": "This product has barely been used for two years. It is a 100 liter deep freezer.", 
+"location": "idaho", 
+"userId": "64696027d13a09ffebbd3c84"
 }
-
-### PUT contact 
-PUT https://project-week-4-api-documentation-uh0m.onrender.com HTTP/1.1
-content-type: application/json
-
-{
-"firstName":"Kelvin",
-"lastName":"abada", "email":"promsei@gmail.com", "favoriteColor":"Brown-red", "birthday":"21/11/1997"
-}
-
-### DELETE contact 
-DELETE https://project-week-4-api-documentation-uh0m.onrender.com HTTP/1.1
