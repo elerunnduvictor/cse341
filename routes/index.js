@@ -15,7 +15,7 @@ router.use(
     // eslint-disable-next-line no-undef
     (docData = (req, res) => {
         let docData = {
-            RenderURL: '',
+            RenderURL: 'https://week-6-personal-project.onrender.com',
         };
         res.send(docData);
     })
