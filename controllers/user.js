@@ -1,5 +1,4 @@
 const mongodb = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
 
 const getAllUser = async(req, res) => {
     try {
@@ -94,7 +93,7 @@ const updateUser = async(req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json('An error occurred while updating the user.');
-    };
+    }
 }
 
 
@@ -119,6 +118,7 @@ const deleteUser = async(req, res) => {
         }
     } catch (error) {
         console.error(error)
+            // eslint-disable-next-line no-undef
         res.status(500).json(err || 'An error occurred while deleting the user.');
     }
 };
