@@ -15,18 +15,34 @@ const getAllUser = async(req, res) => {
 
 const getSingleUser = async(req, res) => {
     try {
-        const userId = new ObjectId(req.params.id);
-        const result = await mongodb.getDb().db('Project_week_5_to_8').collection('Users').find({ _id: userId });
-        result.toArray().then((lists) => {
-            res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(lists[0]);
-        });
-    } catch (err) {
-        res.status(500).json(err);
+        const userName = req.params.userName;
+        if (!userName) {
+            return res.status(400).json('Must provide a valid username to find a user.');
+        }
+
+        const result = await mongodb
+            .getDb()
+            .db('Project_week_5_to_8')
+            .collection('Users')
+            .find({ userName: userName })
+            .toArray();
+
+        if (result.length === 0) {
+            return res.status(404).json('User not found.');
+        }
+
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result[0]);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: error });
     }
 };
 
+
 const createUser = async(req, res) => {
+
     try {
         const user = {
             firstName: req.body.firstName,
@@ -47,9 +63,14 @@ const createUser = async(req, res) => {
     }
 };
 
+
 const updateUser = async(req, res) => {
     try {
-        const userId = new ObjectId(req.params.id);
+        const userName = req.params.userName;
+        if (!userName) {
+            return res.status(400).json('Must use a valid user name to find a user.');
+        }
+
         // be aware of updateOne if you only want to update specific fields
         const user = {
             firstName: req.body.firstName,
@@ -63,30 +84,42 @@ const updateUser = async(req, res) => {
             .getDb()
             .db('Project_week_5_to_8')
             .collection('Users')
-            .replaceOne({ _id: userId }, user);
-        console.log(response);
+            .replaceOne({ userName: userName }, user);
+        // console.log(response);
         if (response.modifiedCount > 0) {
             res.status(204).send();
         } else {
-            res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+            res.status(404).json('User not found.');
         }
-    } catch (err) {
-        res.status(500).json(err);
-    }
-};
+    } catch (error) {
+        console.error(error);
+        res.status(500).json('An error occurred while updating the user.');
+    };
+}
+
 
 const deleteUser = async(req, res) => {
     try {
-        const userId = new ObjectId(req.params.id);
-        const response = await mongodb.getDb().db('Project_week_5_to_8').collection('Users').deleteOne({ _id: userId }, true);
-        console.log(response);
+        const userName = req.params.userName;
+        if (!userName) {
+            return res.status(400).json('Must use a valid user name to delete a user.');
+        }
+
+
+        const response = await mongodb
+            .getDb()
+            .db('Project_week_5_to_8')
+            .collection('Users')
+            .deleteOne({ userName: userName }, true);
+        // console.log(response);
         if (response.deletedCount > 0) {
             res.status(204).send();
         } else {
-            res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
+            res.status(404).json('User not found.');
         }
-    } catch (err) {
-        res.status(500).json(err);
+    } catch (error) {
+        console.error(error)
+        res.status(500).json(err || 'An error occurred while deleting the user.');
     }
 };
 

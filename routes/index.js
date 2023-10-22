@@ -12,9 +12,10 @@ router.use('/Products', productRoute);
 
 router.use(
     '/',
+    // eslint-disable-next-line no-undef
     (docData = (req, res) => {
         let docData = {
-            RenderURL: 'https://week-5-personal-project.onrender.com',
+            RenderURL: '',
         };
         res.send(docData);
     })

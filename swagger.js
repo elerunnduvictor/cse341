@@ -2,10 +2,10 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'My MarketPlace Project API',
+        title: 'MarketPlace Project API',
         description: 'This API contains information about people who sell all kind of products,and the general information of the products they sell.',
     },
-    host: 'https://onrender.com',
+    host: 'week-6.onrender.com',
     schemes: ['https'],
 };
 

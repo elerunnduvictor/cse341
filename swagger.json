@@ -1,11 +1,11 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "My MarketPlace Project API",
+        "title": "MarketPlace Project API",
         "description": "This API contains information about people who sell all kind of products,and the general information of the products they sell.",
         "version": "1.0.0"
     },
-    "host": "https://week-5-personal-project.onrender.com",
+    "host": "week-6.onrender.com",
     "basePath": "/",
     "schemes": [
         "https"
@@ -14,11 +14,8 @@
         "/api-docs": {
             "get": {
                 "description": "",
-                "responses": {
-                    "default": {
-                        "description": ""
-                    }
-                }
+                "parameters": [],
+                "responses": {}
             }
         },
         "/Users/": {
@@ -27,6 +24,7 @@
                 "produces": [
                     "application/json"
                 ],
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -66,20 +64,23 @@
                     "201": {
                         "description": "Created"
                     },
+                    "412": {
+                        "description": "Precondition Failed"
+                    },
                     "500": {
                         "description": "Internal Server Error"
                     }
                 }
             }
         },
-        "/Users/{id}": {
+        "/Users/{userName}": {
             "get": {
                 "description": "",
                 "produces": [
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "id",
+                    "name": "userName",
                     "in": "path",
                     "required": true,
                     "type": "string"
@@ -87,6 +88,12 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -96,7 +103,7 @@
             "put": {
                 "description": "",
                 "parameters": [{
-                        "name": "id",
+                        "name": "userName",
                         "in": "path",
                         "required": true,
                         "type": "string"
@@ -130,6 +137,15 @@
                     "204": {
                         "description": "No Content"
                     },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "412": {
+                        "description": "Precondition Failed"
+                    },
                     "500": {
                         "description": "Internal Server Error"
                     }
@@ -138,7 +154,7 @@
             "delete": {
                 "description": "",
                 "parameters": [{
-                    "name": "id",
+                    "name": "userName",
                     "in": "path",
                     "required": true,
                     "type": "string"
@@ -146,6 +162,12 @@
                 "responses": {
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -159,6 +181,7 @@
                 "produces": [
                     "application/json"
                 ],
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -176,31 +199,28 @@
                     "schema": {
                         "type": "object",
                         "properties": {
+                            "userName": {
+                                "example": "any"
+                            },
                             "productName": {
                                 "example": "any"
                             },
                             "brand": {
                                 "example": "any"
                             },
+                            "category": {
+                                "example": "any"
+                            },
                             "color": {
                                 "example": "any"
                             },
-                            "initialPrice": {
-                                "example": "any"
-                            },
                             "declutterPrice": {
-                                "example": "any"
-                            },
-                            "condition": {
                                 "example": "any"
                             },
                             "description": {
                                 "example": "any"
                             },
                             "location": {
-                                "example": "any"
-                            },
-                            "userId": {
                                 "example": "any"
                             }
                         }
@@ -210,20 +230,20 @@
                     "201": {
                         "description": "Created"
                     },
+                    "412": {
+                        "description": "Precondition Failed"
+                    },
                     "500": {
                         "description": "Internal Server Error"
                     }
                 }
             }
         },
-        "/Products/{id}": {
+        "/Products/{query}": {
             "get": {
                 "description": "",
-                "produces": [
-                    "application/json"
-                ],
                 "parameters": [{
-                    "name": "id",
+                    "name": "query",
                     "in": "path",
                     "required": true,
                     "type": "string"
@@ -232,11 +252,16 @@
                     "200": {
                         "description": "OK"
                     },
+                    "400": {
+                        "description": "Bad Request"
+                    },
                     "500": {
                         "description": "Internal Server Error"
                     }
                 }
-            },
+            }
+        },
+        "/Products/{id}": {
             "put": {
                 "description": "",
                 "parameters": [{
@@ -251,6 +276,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
+                                "userName": {
+                                    "example": "any"
+                                },
                                 "productName": {
                                     "example": "any"
                                 },
@@ -260,13 +288,7 @@
                                 "color": {
                                     "example": "any"
                                 },
-                                "initialPrice": {
-                                    "example": "any"
-                                },
                                 "declutterPrice": {
-                                    "example": "any"
-                                },
-                                "condition": {
                                     "example": "any"
                                 },
                                 "description": {
@@ -282,6 +304,12 @@
                 "responses": {
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "412": {
+                        "description": "Precondition Failed"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -299,6 +327,9 @@
                 "responses": {
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
                     },
                     "500": {
                         "description": "Internal Server Error"
